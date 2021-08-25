@@ -265,16 +265,6 @@ self.addEventListener('activate', (event) => {
   }());
 });
 
-//self.addEventListener('activate', e => e.waitUntil(
-//  caches.keys().then((keyList) => {
-//    return Promise.all(keyList.map((key) => {
-//      if(CACHE_NAME.indexOf(key) === -1) {
-//        return caches.delete(key);
-//      }
-//    }));
-//  })
-//));
-
 self.addEventListener('message', function (event) {
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();
