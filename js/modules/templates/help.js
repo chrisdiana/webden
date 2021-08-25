@@ -84,8 +84,7 @@ export const helpTemplate = `
             </li>
             <li>
               <p><b>Copy/paste limitations</b></p>
-              <p>Currently, Ace Editor does not support native context menu copy/paste functionality in mobile iOS Safari. You can copy/paste if using
-                an external keyboard but in order to work around this, there are copy and paste buttons in the side panel.</p>
+              <p>Currently, Ace Editor has limitations in supporting native context menu copy/paste functionality on mobile iOS Safari. You can use an external keyboard to work around this of course. Newer iOS versions allow you to tap 3 fingers to paste. Ace Editor also allows you to use the mobile ("...") menu in editor to paste. Another alternative is to use the copy and paste buttons in the side panel.</p>
               <p><i>To copy: Select any text inside (or outside) of the app and click the copy button.</i></p>
               <p><i>To paste: With copied text in the clipboard, select the paste button and paste the content into the text area.
                     The content will be pasted into the editor where the cursor is.</i></p>
