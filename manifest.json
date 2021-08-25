@@ -1,0 +1,22 @@
+{
+    "name": "WebDen",
+    "short_name": "WebDen",
+    "description": "Code playground to test HTML, CSS, and JavaScript",
+    "categories": ["development", "utilities", "tools"],
+    "icons": [
+      {
+        "src": "img/icons/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "img/icons/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "index.html",
+    "theme_color": "#1b1b1b",
+    "background_color": "#1b1b1b",
+    "display": "standalone"
+}

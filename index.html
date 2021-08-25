@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" />
+    <title>WebDen - Code Playground</title>
+    <meta name="description" content="Code playground to test your JavaScript, CSS, HTML online. Optimized for mobile and tablet devices.">
+    <meta name="keywords" content="code playground, online javascript editor, test js online, mobile web playground, testing javascript online, online ide, online code editor, html, css, js, js editor">
+    <meta name="author" content="WebDen">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="js/lib/framework7.bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="js/lib/font-awesome.all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#82cdfb">
+    <link rel="shortcut icon" href="img/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1b1b">
+    <meta name="msapplication-config" content="img/icons/browserconfig.xml">
+    <meta name="theme-color" content="#1b1b1b">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#1b1b1b">
+
+    <!--  Splash screens -->
+    <link href="img/splash/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/splash/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/splash/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="img/splash/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="img/splash/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/splash/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+    <link href="img/splash/ipad_splash.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/splash/ipadpro1_splash.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/splash/ipadpro3_splash.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/splash/ipadpro2_splash.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+
+  </head>
+  <body class="theme-dark">
+    <!-- Loader -->
+    <div id="loader-container">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="app">
+      <div class="page">
+
+        <!-- Tab Links -->
+        <div class="toolbar tabbar toolbar-top">
+          <div class="toolbar-inner">
+            <a href="#html" class="tab-link tab-link-active">
+              <i class="fab fa-html5 tab-icon icon-html"></i>
+            </a>
+            <a href="#css" class="tab-link">
+              <i class="fab fa-css3-alt tab-icon icon-css"></i>
+            </a>
+            <a href="#javascript" class="tab-link">
+              <i class="fab fa-js tab-icon icon-js"></i>
+            </a>
+            <a href="#console" class="tab-link">
+              <i class="fas fa-terminal tab-icon icon-console"></i>
+            </a>
+            <a href="#result" class="tab-link">
+              <i class="fas fa-tablet-alt tab-icon icon-result"></i>
+            </a>
+            <a href="#" data-panel="right" class="tab-link panel-open">
+              <i class="fas fa-bars tab-icon menu"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tabs">
+          <div id="html" class="tab tab-view tab-active" contenteditable="true"></div>
+          <div id="css" class="tab tab-view" contenteditable="true"></div>
+          <div id="javascript" class="tab tab-view" contenteditable="true"></div>
+          <div id="console" class="tab tab-view">
+            <div id="console-container">
+              <pre id="console-content"></pre>
+            </div>
+          </div>
+          <div id="result" class="tab tab-view">
+            <iframe id="result-iframe" frameborder="0"></iframe>
+          </div>
+        </div>
+
+        <!-- Side Panel -->
+        <div class="panel panel-right panel-cover">
+          <div class="page">
+            <div class="page-content">
+              <div class="block">
+                <img id="brand" src="./img/brand.png"/>
+              </div>
+
+              <!-- Current Project -->
+              <div class="list no-hairlines-md">
+                <ul>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Name</div>
+                      <div class="item-input-wrap">
+                        <input
+                          id="project-name"
+                          type="text"
+                          oninput="app.updateProject('name', event)" />
+                        <span class="input-clear-button"></span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-input">
+                    <div class="item-inner">
+                      <div class="item-title item-label">Description</div>
+                      <div class="item-input-wrap">
+                        <textarea
+                          class="resizable"
+                          id="project-description"
+                          oninput="app.updateProject('description', event)">
+                        </textarea>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Project Menu -->
+              <div class="list">
+                <ul>
+                  <li>
+                    <a href="#" onclick="app.ui.newProjectConfirm()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-plus-square"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">New</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="app.saveCurrentProject()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-save"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">Save</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="app.ui.saveAsProjectPrompt()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-share"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title">Save As</div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="app.ui.openProjectPopup()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-folder-open"></i></div>
+                      <div class="item-inner"><div class="item-title">Open</div></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Copy / Paste -->
+              <div class="list accordion-list">
+                <ul>
+                  <li>
+                    <a href="#" onclick="app.copy()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-copy"></i></div>
+                      <div class="item-inner"><div class="item-title">Copy</div></div>
+                    </a>
+                  </li>
+                  <li class="accordion-item"><a href="#" class="item-content item-link">
+                    <div class="item-media"><i class="fas fa-paste"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Paste</div>
+                    </div></a>
+                    <div class="accordion-item-content">
+                      <div class="list no-hairlines-md">
+                        <ul>
+                          <li class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">Paste Content Here</div>
+                              <div class="item-input-wrap">
+                                <textarea
+                                  id="settings-paste"
+                                  oninput="app.paste(event)">
+                                </textarea>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- TODO: add cdn
+                  <li class="accordion-item"><a href="#" class="item-content item-link">
+                    <div class="item-media"><i class="fas fa-link"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">CDN</div>
+                    </div></a>
+                    <div class="accordion-item-content">
+                      <div class="list no-hairlines-md">
+                        <ul>
+                          <li class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">Paste CDN URLs Here</div>
+                              <div class="item-input-wrap">
+                                <textarea
+                                  id="settings-cdn-js"
+                                  oninput="app.addCdn(event, 'js')">
+                                </textarea>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  -->
+                  <!-- TODO: add console history
+                  <li>
+                    <a href="#" onclick="app.ui.clearConsolePrompt()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-trash"></i></div>
+                      <div class="item-inner"><div class="item-title">Clear Console</div></div>
+                    </a>
+                  </li>
+                  -->
+                </ul>
+              </div>
+
+              <!-- Settings -->
+              <div class="list accordion-list">
+                <ul>
+                  <li class="accordion-item"><a href="#" class="item-content item-link">
+                    <div class="item-media"><i class="fas fa-cog"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">Settings</div>
+                    </div></a>
+                    <div class="accordion-item-content" id="settings">
+                      <div class="list no-hairlines-md">
+                        <ul>
+                          <li class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">Theme</div>
+                              <div class="item-input-wrap input-dropdown-wrap">
+                                <select id="settings-theme" onchange="app.updateSettings()"></select>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">Font Size</div>
+                              <div class="item-input-wrap">
+                                <input type="number" value="15" id="settings-fontsize" onchange="app.updateSettings()">
+                              </div>
+                            </div>
+                          </li>
+                          <li class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">Keybinding</div>
+                              <div class="item-input-wrap input-dropdown-wrap">
+                                <select id="settings-keyboard" onchange="app.updateSettings()"></select>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">Tab Size</div>
+                              <div class="item-input-wrap">
+                                <select id="settings-tabsize" onchange="app.updateSettings()"></select>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title settings-toggle">Gutter</div>
+                              <div class="item-after">
+                                <label class="toggle">
+                                  <input id="settings-gutter" type="checkbox" onchange="app.updateSettings()">
+                                  <span class="toggle-icon"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title settings-toggle">Line Numbers</div>
+                              <div class="item-after">
+                                <label class="toggle">
+                                  <input id="settings-linenumbers" type="checkbox" onchange="app.updateSettings()">
+                                  <span class="toggle-icon"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title settings-toggle">Autocomplete</div>
+                              <div class="item-after">
+                                <label class="toggle">
+                                  <input id="settings-autocomplete" type="checkbox" onchange="app.updateSettings()" checked>
+                                  <span class="toggle-icon"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title settings-toggle">Ruler</div>
+                              <div class="item-after">
+                                <label class="toggle">
+                                  <input id="settings-printmargin" type="checkbox" onchange="app.updateSettings()" checked>
+                                  <span class="toggle-icon"></span>
+                                </label>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#" onclick="app.ui.openHelpPopup()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-question-circle"></i></div>
+                      <div class="item-inner"><div class="item-title">Help</div></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Import/Export Menu -->
+              <div class="list">
+                <ul>
+                  <li>
+                    <input id="file-import" type="file" style="visibility:hidden;display:none;" onchange="app.importProject(event)" accept="application/json" />
+                    <a href="#" onclick="document.getElementById('file-import').click()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-upload"></i></div>
+                      <div class="item-inner"><div class="item-title">Import</div></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="app.ui.exportCurrentProjectPrompt()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-share"></i></div>
+                      <div class="item-inner"><div class="item-title">Export</div></div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="app.ui.exportCodePrompt()" class="item-link item-content">
+                      <div class="item-media"><i class="fas fa-code"></i></div>
+                      <div class="item-inner"><div class="item-title">Download Code</div></div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="version"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBJKD4W3JP"></script>
+    <!--
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FBJKD4W3JP');
+    </script>
+    -->
+
+    <script type="text/javascript" src="js/version.js"></script>
+    <script type="text/javascript" src="js/lib/ace/ace.js"></script>
+    <script type="text/javascript" src="js/lib/ace/ext-language_tools.js"></script>
+    <script type="text/javascript" src="js/lib/ace/ext-keybinding_menu.js"></script>
+    <script type="text/javascript" src="js/lib/framework7.bundle.min.js"></script>
+    <script type="text/javascript" src="js/lib/renderjson.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="js/sw-init.js"></script>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+html, body {
+  font-family: monospace !important;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  color: #ccc;
+  background: #333338;
+  position: fixed;
+}
+
+hr {
+  margin: 50px 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid rgb(48, 48, 44);
+  border-left: 0px;
+  border-right: 0px;
+}
+
+#app {
+  top: 0;
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#loader-container {
+   width:100%;
+       height:100%;
+	position:fixed;
+			z-index:99;
+			top:0;
+
+    -webkit-transition: opacity 0.75s ease-in-out;
+    -moz-transition: opacity 0.75s ease-in-out;
+    -ms-transition: opacity 0.75s ease-in-out;
+    -o-transition: opacity 0.75s ease-in-out;
+    opacity: 1;
+}
+
+.loader{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 25%;
+    background: linear-gradient(to right,  #66ffb5 0%,#fff47e 24%,#f09aed 52%,#65e8ff 77%,#82eddd 100%);
+    animation: animate 0.5s linear infinite;
+    top: 45%;
+}
+  @keyframes animate {
+      0%{transform: rotate(0deg);}
+      100%{transform: rotate(360deg);}
+}
+.loader span{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(to right,  #66ffb5 0%,#fff47e 24%,#f09aed 52%,#65e8ff 77%,#82eddd 100%);
+}
+.loader span:nth-child(1){
+    filter: blur(5px);
+}
+.loader span:nth-child(2){
+    filter: blur(10px);
+}
+.loader span:nth-child(3){
+    filter: blur(25px);
+}
+.loader span:nth-child(4){
+    filter: blur(50px);
+}
+.loader::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background: #333338;
+    border-radius: 50%;
+}
+
+.loader-logo-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+}
+
+.loader-logo {
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+}
+
+#brand {
+  height: 45px;
+  display: block;
+  margin: 0 auto;
+}
+
+.tabs {
+  height:100%;
+  width:100%;
+  /*overflow: scroll;*/
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab-view {
+  height:100%;
+  width:100%;
+  top: 48px;
+  position: absolute;
+  padding-bottom: 48px;
+  -webkit-overflow-scrolling: touch;
+}
+
+#result {
+  background: #fff;
+}
+
+.tab-icon {
+  font-size: 20px;
+}
+
+.settings-toggle {
+  font-size: 12px !important;
+  color: #a2a2a2 !important;
+}
+
+.settings-paste {
+  font-size: 10px;
+}
+
+.version {
+  padding: 15px;
+  text-align: right;
+  font-size: 12px;
+  color: #707070;
+}
+
+/* Framework7 Overrides */
+
+.dialog-title {
+  color: #ccc;
+}
+
+.md .dialog {
+  color: #ccc;
+  background: rgb(28, 28, 31);
+}
+
+input.dialog-input[type] {
+  color: #000;
+  padding: 10px;
+}
+
+/* Ace Editor Overrides */
+
+.ace_editor {
+  font: 16px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+}
+
+.ace_dark > .ace_mobile-menu,
+.ace_prompt_container,
+.ace_editor.ace_autocomplete,
+.ace-tm {
+  color: #ccc;
+  background: #333338;
+  border: 0px;
+}
+
+.ace_line.ace_selected {
+  background: rgb(0, 122, 255);
+  color: #fff;
+}
+
+.ace_mobile-menu {
+  box-shadow: none !important;
+  font-size: 2vh;
+  padding: 2px 8px;
+}
+
+.ace_mobile-button {
+  padding: 0 12px;
+  padding: 0;
+  display: block;
+  white-space: nowrap;
+  font-size: 2vh;
+  text-align: right;
+}
+
+.ace_mobile-button:hover {
+  background: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  /*
+  .ace_mobile-menu {
+    padding: 5px;
+  }
+  .ace_mobile-button {
+    padding: 0 5px;
+  }
+  */
+}
+
+#console {
+  /*overflow: scroll;*/
+}
+
+#console-container {
+  position: absolute;
+  top: 0;
+  overflow: scroll;
+  height: 100%;
+  width: 100%;
+}
+
+#console-content {
+  overflow: auto;
+  height: auto;
+  padding: 10px 15px;
+  margin: 0;
+  padding-bottom: 200px;
+  position: relative;
+}
+
+#console pre {
+  margin: 0;
+}
+
+#console a {
+  text-decoration: none;
+}
+
+#console .console-type-info   { background-color: rgba(21, 95, 125, 0.1); }
+#console .console-type-warn   { background-color: rgba(255, 165, 0, 0.1); }
+#console .console-type-error  { background-color: rgba(255, 0, 0, 0.1); }
+#console .console-type-debug  { background-color: rgba(219, 219, 0, 0.1); }
+#console .console-type-log    { background-color: transparent; }
+
+#console .console-item {
+  position: relative;
+}
+
+#console .console-info-left {
+  margin-right: 8px;
+  float: left;
+}
+
+#console .console-info-right {
+  position: absolute;
+  right: 0;
+  opacity: 0.4;
+}
+
+
+#console-container.light {
+  background: white;
+  color: #777;
+}
+#console-container.light a { color: #777; }
+#console-container.light .disclosure    { font-size: 1em; }
+#console-container.light .syntax        { color: grey; }
+#console-container.light .string        { color: rgb(196,89,80); }
+#console-container.light .number        { color: #005cc5; }
+#console-container.light .boolean       { color: #6f42c1; }
+#console-container.light .key           { color: rgb(170,129,177); }
+#console-container.light .keyword       { color: grey; }
+#console-container.light .array.syntax  { color: grey; }
+
+#console-container.dark {
+  background: rgb(32, 32, 32);
+  color: #fff;
+}
+#console-container.dark a { color: #777; }
+#console-container.dark .disclosure    { font-size: 1em; }
+#console-container.dark .syntax        { color: grey; }
+#console-container.dark .string        { color: rgb(179,128,83); }
+#console-container.dark .number        { color: rgb(183,156,210); }
+#console-container.dark .boolean       { color: plum; }
+#console-container.dark .key           { color: rgb(170,129,177); }
+#console-container.dark .keyword       { color: grey; }
+#console-container.dark .array.syntax  { color: lightsalmon; }
+
