@@ -93,14 +93,14 @@ export const helpTemplate = `
               <p><b>Download limitations in iOS standalone mode</b></p>
               <p>Currently, iOS Safari does not yet support the HTML download attribute when in standalone mode. This means if you
                 install the app to the home screen, you will only be able to import projects and not export. If this angers you as much
-                as it does me and many others, <a href="https://bugs.webkit.org/show_bug.cgi?id=167341" target="_blank">ask Apple</a>
+                as it does me and many others, <a class="link external" href="https://bugs.webkit.org/show_bug.cgi?id=167341" target="_blank">ask Apple</a>
                 to impliment it sometime in the near future.
             </li>
           </ul>
 
           <hr>
 
-          <p>webden.dev &copy; ${new Date().getFullYear()} - Source on <a href="https://github.com/chrisdiana/webden" target="_blank">Github</a></p>
+          <p>webden.dev &copy; ${new Date().getFullYear()} - Source on <a class="link external" href="https://github.com/chrisdiana/webden" target="_blank">Github</a></p>
         </div>
       </div>
     </div>
