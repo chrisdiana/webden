@@ -100,7 +100,7 @@ export const helpTemplate = `
 
           <hr>
 
-          <p>webden.dev &copy; ${new Date().getFullYear()} - Source on <a href="#" target="_blank">Github</a></p>
+          <p>webden.dev &copy; ${new Date().getFullYear()} - Source on <a href="https://github.com/chrisdiana/webden" target="_blank">Github</a></p>
         </div>
       </div>
     </div>
