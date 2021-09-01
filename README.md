@@ -44,8 +44,10 @@ Add any scripts to the HTML tab as you would in a HTML file.
 
 ## Coming Soon
 
+[Sign up](http://eepurl.com/gntUvf) to get updates on new features and releases.
+
 * Save as Github Gist
-* Pushing / Pulling repos from Github
+* Pushing / Pulling from Github
 * Updated console features
 * Updated editor theme features
 * Capture JavaScript errors (for console)
