@@ -1,11 +1,11 @@
 
-<a href="https://webden.dev/landing" target="_blank"><img src="landing/img/brand.png" width="300px" alt="WebDen"/></a>
+<a href="https://webden.dev" target="_blank"><img src="img/brand.png" width="300px" alt="WebDen"/></a>
 
 [WebDen.dev](https://webden.dev) is an open source mobile and tablet friendly alternative to JSFiddle and JSBin.
 It is a fully client-side app so you can install it as a progressive web app (PWA) on
 your device to use offline.
 
-![WebDen Screenshot](landing/img/ipad-1.png)
+![WebDen Screenshot](img/ipad-1.png)
 
 
 ## Features
