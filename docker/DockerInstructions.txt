@@ -1,0 +1,5 @@
+1. Navigate to this directory in a command prompt.
+1. Clone this repo into this directory: `git clone https://github.com/chrisdiana/webden`
+1. Build the WebDen Docker image: `docker build . -t webden:1.0`
+1. Edit webden.yml and replace YourNetworkName with your Docker network name
+1. Build the Docker container `docker-compose -f webden.yml up -d`

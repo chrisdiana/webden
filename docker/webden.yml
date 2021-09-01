@@ -1,0 +1,17 @@
+version: '3.7'
+
+networks:
+    default:
+         name: YourNetworkName
+         external: true
+
+services:
+    webden:
+        container_name: WebDen
+        stdin_open: true
+        tty: true
+        image: webden:1.0
+        hostname: WebDen
+        networks:
+            - default
+        restart: always
