@@ -53,6 +53,12 @@ Add any scripts to the HTML tab as you would in a HTML file.
 * Capture JavaScript errors (for console)
 
 
+## License
+
+* The program is distributed under the terms of the Simplified BSD License. The license details can be found in the file `LICENSE`
+* The ACE editor is BSD licensed.
+
+
 ## Thanks!
 
 * [Ace](http://ace.c9.io)
