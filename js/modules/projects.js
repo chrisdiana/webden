@@ -41,6 +41,8 @@ export function openProject(uuid) {
   setEditorValues(app.currentProject.data);
   ui.closeCurrentPopup();
   ui.closeCurrentPanel();
+  app.meta.last = app.currentProject.uuid;
+  saveStorage('meta');
   app.unsavedChanges = false;
 }
 
