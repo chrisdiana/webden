@@ -99,8 +99,10 @@ export function initSettings() {
   el.tabSize.innerHTML = selectTemplate(options.tabSize);
 
   for(const i in el) {
-    if(el[i]) {
-      el[i].value = app.settings[i];
+    const setting = el[i];
+    if(setting) {
+      setting.value = app.settings[i];
+      setting.checked = app.settings[i];
     }
   }
 
