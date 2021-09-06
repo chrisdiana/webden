@@ -4,15 +4,13 @@ let refreshing;
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('sw.js').then(reg => {
     reg.addEventListener('updatefound', () => {
+      console.log('update found')
       newWorker = reg.installing;
-
       newWorker.addEventListener('statechange', () => {
-        switch(newWorker.state) {
-          case 'installed':
-            if(navigator.serviceWorker.controller) {
-              app.ui.updateAvailablePrompt(window.runUpdate);
-            }
-            break;
+        if(newWorker.state === 'installed') {
+          if(navigator.serviceWorker.controller) {
+            app.ui.updateAvailablePrompt(window.runUpdate);
+          }
         }
       });
     });

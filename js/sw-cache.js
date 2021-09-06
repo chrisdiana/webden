@@ -1,4 +1,4 @@
-FILES_TO_CACHE = [
+const FILES_TO_CACHE = [
   'index.html',
   'css/style.css',
   'manifest.json',
@@ -15,7 +15,6 @@ FILES_TO_CACHE = [
   'js/modules/projects.js',
   'js/modules/utils.js',
   'js/modules/app.js',
-  'js/version.js',
   'js/sw-init.js',
   'img/ipad-1.png',
   'img/splash/ipad_splash.png',

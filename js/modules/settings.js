@@ -20,7 +20,7 @@ export const defaults = {
   },
   meta: {
     last: null,
-    version: window.VERSION,
+    version: VERSION,
   },
 };
 
@@ -104,6 +104,10 @@ export function initSettings() {
     }
   }
 
+  // update to latest version
+  app.meta.version = VERSION;
+  saveStorage('meta');
+
   const versionEl = document.querySelector('.version');
   versionEl.innerHTML = `v${app.meta.version}`;
 }
@@ -121,4 +125,5 @@ export function updateSettings() {
   setEditorSettings();
   setConsoleTheme();
   saveStorage('settings');
+  saveStorage('meta');
 }
