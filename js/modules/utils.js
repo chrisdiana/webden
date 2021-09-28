@@ -65,7 +65,9 @@ ${css}
 <body>
 ${html}
 <script type="text/javascript">
+(function() {
 ${js}
+})();
 </script>
 </body>
 </html>`;
