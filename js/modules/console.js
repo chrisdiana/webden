@@ -6,7 +6,6 @@ const consoleContainer = document.getElementById('console-container');
 const consoleEl = document.getElementById('console-content');
 const consoleHistoryEnabled = false;
 
-
 export function addLog(type, method, arg) {
   const outputEl = document.createElement('div');
   const data = JSON.parse(JSON.stringify(arg))
@@ -23,14 +22,22 @@ export function addLog(type, method, arg) {
   consoleEl.appendChild(outputEl);
 }
 
+export function validateJs(iframe, js) {
+  try {
+    iframe.contentWindow.eval(js);
+  } catch (error) {
+    addLog('string', 'error', error);
+  }
+}
+
 export function updateConsole(iframe) {
 
   const methods = ['log', 'debug', 'warn', 'error', 'info'];
 
   // TODO: capture console errors
-  iframe.contentWindow.onerror = function(error) {
-    addLog('string', 'error', error);
-  }
+  // iframe.contentWindow.onerror = function(error) {
+  //   addLog('string', 'error', error);
+  // }
 
   methods.forEach((method) => {
     iframe.contentWindow.console[method] = function() {
