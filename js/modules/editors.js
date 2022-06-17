@@ -1,7 +1,7 @@
 import app from './app.js';
 import { debounce, generateHtmlResult } from './utils.js';
 import { saveCurrentProject } from './projects.js';
-import { updateConsole, setConsoleTheme, clearConsole } from './console.js';
+import { updateConsole, setConsoleTheme, clearConsole, validateJS } from './console.js';
 import ui from './ui.js';
 
 const resultEl = document.getElementById('result-iframe');
@@ -61,15 +61,19 @@ class Editor {
 function updateResult() {
   const result = resultEl.contentWindow.document;
   clearConsole();
-  result.open()
-  result.write(generateHtmlResult(
-    editors.html.ace.getValue(),
-    editors.css.ace.getValue(),
-    editors.javascript.ace.getValue(),
-  ));
-  result.close();
-  updateConsole(resultEl);
-  app.unsavedChanges = true;
+  const isValid = validateJS(resultEl, editors.javascript.ace.getValue());
+  if(isValid) {
+    clearConsole();
+    result.open()
+    result.write(generateHtmlResult(
+      editors.html.ace.getValue(),
+      editors.css.ace.getValue(),
+      editors.javascript.ace.getValue(),
+    ));
+    result.close();
+    updateConsole(resultEl);
+    app.unsavedChanges = true;
+  }
 }
 
 export function setEditorSettings() {

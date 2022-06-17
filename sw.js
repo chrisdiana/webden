@@ -3,7 +3,7 @@
 self.importScripts('./js/version.js');
 self.importScripts('./js/sw-cache.js');
 
-const CACHE_NAME = 'static-cache-dv' + VERSION;
+const CACHE_NAME = 'static-cache-v' + VERSION;
 
 // Install service worker and cache all content
 self.addEventListener('install', e => e.waitUntil(
