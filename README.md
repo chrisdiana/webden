@@ -59,6 +59,23 @@ Add any scripts to the HTML tab as you would in a HTML file.
 * The ACE editor is BSD licensed.
 
 
+## Contributing
+
+1. Fork and clone the repo
+2. Run any local web server in the root directory
+
+```
+$ git clone git@github.com:chrisdiana/webden.git
+$ cd webden/
+$ python3 -m http.server 8080
+```
+
+3. Navigate to the local webserver and pass the `debug=1` param to bypass service workers
+
+```
+http://localhost:8080?debug=1
+```
+
 ## Thanks!
 
 * [Ace](http://ace.c9.io)
