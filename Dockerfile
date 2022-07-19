@@ -8,6 +8,9 @@ RUN groupadd -g 999 webden && \
 # Set the working directory as /home/webden
 WORKDIR /home/webden
 
+# Set the USER as webden
+USER webden
+
 # Clone to the working directory, i.e. /home/webden
 RUN git clone https://github.com/chrisdiana/webden .
 
