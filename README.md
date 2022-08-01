@@ -76,6 +76,25 @@ $ python3 -m http.server 8080
 http://localhost:8080?debug=1
 ```
 
+## Running as a Container
+
+A Dockerfile is provided for running this as a container.
+
+1. Build the container -
+
+```
+docker build . -t chrisdiana/webden:latest
+```
+
+2. Run the container -
+
+```
+docker run -d -p 8080:8080 chrisdiana/webden:latest
+```
+
+3. Access the running container via http://localhost:8080
+
+
 ## Thanks!
 
 * [Ace](http://ace.c9.io)
